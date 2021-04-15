@@ -7,17 +7,16 @@ assignees: ''
 
 ---
 
-- [ ] The [readme](https://github.com/PrismarineJS/prismarine-template/README.md) doesn't contain a resolution to my issue 
-- [ ] The [example](https://github.com/PrismarineJS/prismarine-template/example.js) doesn't contain a resolution to my issue 
+- [ ] The [readme](https://github.com/PrismarineJS/gdmc-challenge-2021/README.md) doesn't contain a resolution to my issue
 
 
 <!-- To mark the checkbox, insert `x` into it: [x] -->
 
 ## Versions
 
- - mineflayer: #.#.#
- - server: vanilla/spigot/paper #.#.#
  - node: #.#.#
+ - server: vanilla/spigot/paper #.#.#
+ - gdmc-challenge-2021: #.#.#
 
 ## Clear question
 
