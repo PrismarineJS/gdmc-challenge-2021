@@ -40,6 +40,12 @@ fs.ensureDirSync(MC_SERVER_JAR_DIR)
 fs.ensureDirSync(MC_SERVER_PATH)
 fs.removeSync(path.join(MC_SERVER_PATH, `${minecraftVersion}`, 'world'))
 
+function wait (ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
 const wrap = new Wrap(MC_SERVER_JAR, path.join(MC_SERVER_PATH, `${minecraftVersion}`))
 wrap.on('line', (line) => {
   // console.log(line)
@@ -48,7 +54,7 @@ wrap.on('line', (line) => {
   } else if (line.includes('Teleported')) {
     wrap.emit('tped')
   } else if (line.includes('Seed')) {
-    wrap.emit('seed', line.split('Seed: [')[1].split(']')[0])
+    wrap.emit('seed', line.split('Seed: ')[1])
   }
 })
 
@@ -78,12 +84,13 @@ async function generate () {
   console.log('starting generation...')
   const total = (Math.floor(x1 / 16) - Math.floor(x0 / 16) + 1) * (Math.floor(z1 / 16) - Math.floor(z0 / 16) + 1)
   let cur = 0
-  for (let x = Math.floor(x0 / 16); x <= Math.floor(x1 / 16); x++) {
-    for (let z = Math.floor(z0 / 16); z <= Math.floor(z1 / 16); z++) {
+  for (let x = Math.floor(x0 / 16); x <= Math.floor(x1 / 16); x += 3) {
+    for (let z = Math.floor(z0 / 16); z <= Math.floor(z1 / 16); z += 3) {
       wrap.writeServer(`tp bot ${x * 16 + 8} 255 ${z * 16 + 8}\n`)
       await once(wrap, 'tped')
-      cur++
+      cur += 9
       if (cur % 10 === 0) console.log(`Generated ${cur} / ${total} chunks`)
+      await wait(500)
     }
   }
 

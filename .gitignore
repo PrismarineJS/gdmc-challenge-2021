@@ -5,3 +5,5 @@ server/
 server_jars/
 versions/
 *.png
+*.gif
+data/

@@ -15,20 +15,15 @@ Run `npm i` to install the dependencies.
 
 Generate a 512x512 test world:
 ```
-node tools/genworld.js --seed 6708951544769826080 --bounds -256 256 -256 256 --version 1.16.4
+node tools/genworld.js --seed 6708951544769826080 --bounds -256 256 -256 256 --version 1.12.2
 ```
 
 Generate a biomemap as a png image:
 ```
-node tools/biomemap.js --input ./server/1.16.4/world --bounds -256 256 -256 256 --output biomemap.png --version 1.16.4
+node tools/biomemap.js --input ./server/1.12.2/world --bounds -256 256 -256 256 --output biomemap.png --version 1.12.2
 ```
 
-Generate a heightmap as a png image:
+Generate various maps as png images:
 ```
-node tools/heightmap.js --input ./server/1.16.4/world --bounds -256 256 -256 256 --output heightmap.png --version 1.16.4
-```
-
-Generate a watermap as a png image:
-```
-node tools/watermap.js --input ./server/1.16.4/world --bounds -256 256 -256 256 --output watermap.png --version 1.16.4
+node tools/maps.js --input ./server/1.12.2/world --bounds -256 256 -256 256 --version 1.12.2
 ```
