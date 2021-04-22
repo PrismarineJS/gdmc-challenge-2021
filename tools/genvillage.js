@@ -1,19 +1,30 @@
-const World = require('prismarine-world')('1.16.1')
-const Anvil = require('prismarine-provider-anvil').Anvil('1.16.1')
+const commandLineArgs = require('command-line-args')
+const options = commandLineArgs([
+  { name: 'version', alias: 'v', type: String, defaultValue: '1.16.1' },
+  { name: 'bounds', alias: 'b', type: Number, multiple: true, defaultValue: [-256, 256, -256, 256] }
+])
+
+const version = options.version
+const bounds = options.bounds
+
+const World = require('prismarine-world')(version)
+const Anvil = require('prismarine-provider-anvil').Anvil(version)
 const Vec3 = require('vec3')
 
-const regionPath = './server/1.16.1/world/region'
+const regionPath = `./server/${version}/world/region`
 const world = new World(null, new Anvil(regionPath))
 
 // Placeholder
 async function generateCircle () {
-  const center = new Vec3(0, 70, 0)
+  const p1 = new Vec3(bounds[0], 70, bounds[2])
+  const p2 = new Vec3(bounds[1], 70, bounds[3])
+  const center = p1.add(p2).scale(0.5)
 
   for (let x = -10; x <= 10; x++) {
     for (let z = -10; z <= 10; z++) {
-      const vec = new Vec3(x, 70, z)
-      if (vec.distanceTo(center) >= 10) continue
-      await world.setBlockStateId(vec, 1)
+      const vec = new Vec3(x, 0, z)
+      if (vec.distanceTo(new Vec3(0, 0, 0)) >= 10) continue
+      await world.setBlockStateId(vec.add(center), 1)
     }
   }
 

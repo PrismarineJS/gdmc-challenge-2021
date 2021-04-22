@@ -14,6 +14,7 @@ Run `npm i` to install the dependencies.
 ### Tools
 
 Generate a 512x512 test world:
+(Bounds coordinates are x0, x1, z0, z1)
 ```
 node tools/genworld.js --seed 6708951544769826080 --bounds -256 256 -256 256 --version 1.12.2
 ```
