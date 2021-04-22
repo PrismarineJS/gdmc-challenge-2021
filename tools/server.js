@@ -5,8 +5,6 @@ const fs = require('fs-extra')
 const commandLineArgs = require('command-line-args')
 const options = commandLineArgs([
   { name: 'version', alias: 'v', type: String, defaultValue: '1.16.1' },
-  { name: 'port', alias: 'p', type: Number, defaultValue: 3000 },
-  { name: 'bounds', alias: 'b', type: Number, multiple: true, defaultValue: [-256, 256, -256, 256] },
   { name: 'seed', alias: 's', type: String, defaultValue: '' }
 ])
 

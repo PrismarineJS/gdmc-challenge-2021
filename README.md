@@ -27,3 +27,13 @@ Generate various maps as png images:
 ```
 node tools/maps.js --input ./server/1.12.2/world --bounds -256 256 -256 256 --version 1.12.2
 ```
+
+Generate a village centered at 0, 0:
+```
+node tools/genvillage.js
+```
+
+Start a Minecraft server to view the generated world/village:
+```
+node tools/server.js --seed 6708951544769826080 --version 1.12.2
+```
