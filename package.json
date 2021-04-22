@@ -34,7 +34,8 @@
     "mineflayer": "^3.6.0",
     "prismarine-block": "git+https://github.com/PrismarineJS/prismarine-block.git",
     "prismarine-provider-anvil": "^2.3.2",
-    "prismarine-world": "^3.6.0"
+    "prismarine-world": "^3.6.0",
+    "vec3": "^0.1.7"
   },
   "devDependencies": {
     "standard": "^16.0.3"
