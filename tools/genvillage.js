@@ -10,8 +10,12 @@ const bounds = options.bounds
 const World = require('prismarine-world')(version)
 const Anvil = require('prismarine-provider-anvil').Anvil(version)
 const Vec3 = require('vec3')
+const fs = require('fs-extra')
 
-const regionPath = `./server/${version}/world/region`
+fs.removeSync(`./village/${version}/world`)
+fs.copySync(`./world_download/${version}/world`, `./village/${version}/world`)
+
+const regionPath = `./village/${version}/world/region`
 const world = new World(null, new Anvil(regionPath))
 
 // Placeholder

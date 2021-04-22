@@ -23,7 +23,7 @@ const propOverrides = {
 
 const MC_SERVER_JAR_DIR = path.join(__dirname, '../', 'server_jars')
 const MC_SERVER_JAR = path.join(MC_SERVER_JAR_DIR, `minecraft_server.${minecraftVersion}.jar`)
-const MC_SERVER_PATH = path.join(__dirname, '../', 'server')
+const MC_SERVER_PATH = path.join(__dirname, '../', 'village')
 
 fs.ensureDirSync(MC_SERVER_JAR_DIR)
 fs.ensureDirSync(MC_SERVER_PATH)
