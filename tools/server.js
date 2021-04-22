@@ -4,14 +4,13 @@ const fs = require('fs-extra')
 
 const commandLineArgs = require('command-line-args')
 const options = commandLineArgs([
-  { name: 'version', alias: 'v', type: String, defaultValue: '1.16.1' },
-  { name: 'seed', alias: 's', type: String, defaultValue: '' }
+  { name: 'version', alias: 'v', type: String, defaultValue: '1.16.1' }
 ])
 
 const minecraftVersion = options.version
 
 const propOverrides = {
-  'level-seed': options.seed,
+  'level-seed': '',
   'spawn-npcs': 'false',
   'spawn-animals': 'false',
   'online-mode': 'false',

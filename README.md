@@ -36,5 +36,5 @@ node tools/genvillage.js
 
 Start a Minecraft server to view the generated world/village:
 ```
-node tools/server.js --seed 6708951544769826080 --version 1.12.2
+node tools/server.js --version 1.12.2
 ```
