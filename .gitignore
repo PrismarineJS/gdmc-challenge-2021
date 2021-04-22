@@ -7,3 +7,5 @@ versions/
 *.png
 *.gif
 data/
+logs
+launcher_accounts.json
