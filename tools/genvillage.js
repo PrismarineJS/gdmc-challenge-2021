@@ -14,7 +14,7 @@ const Anvil = require('prismarine-provider-anvil').Anvil(version)
 const Vec3 = require('vec3')
 const fs = require('fs-extra')
 
-fs.removeSync(`./village/${version}/world`)
+fs.removeSync(`./village/${name}/${version}/world`)
 fs.copySync(`./world_download/${version}/world`, `./village/${name}/${version}/world`)
 
 const regionPath = `./village/${name}/${version}/world/region`
