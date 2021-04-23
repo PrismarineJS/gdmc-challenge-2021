@@ -29,12 +29,12 @@ Generate various maps as png images:
 node tools/maps.js --input ./server/1.12.2/world --bounds -256 256 -256 256 --version 1.12.2
 ```
 
-Generate a village centered at 0, 0:
+Generate a 512x512 named village centered at 0, 0:
 ```
-node tools/genvillage.js
+node tools/genvillage.js --bounds -256 256 -256 256 --name Lymnor
 ```
 
 Start a Minecraft server to view the generated world/village:
 ```
-node tools/server.js --version 1.12.2
+node tools/server.js --version 1.12.2 --name Lymnor
 ```

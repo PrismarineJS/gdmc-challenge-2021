@@ -4,10 +4,12 @@ const fs = require('fs-extra')
 
 const commandLineArgs = require('command-line-args')
 const options = commandLineArgs([
-  { name: 'version', alias: 'v', type: String, defaultValue: '1.16.1' }
+  { name: 'version', alias: 'v', type: String, defaultValue: '1.16.1' },
+  { name: 'name', alias: 'n', type: String, defaultValue: 'default' }
 ])
 
 const minecraftVersion = options.version
+const name = options.name
 
 const propOverrides = {
   'level-seed': '',
@@ -23,7 +25,7 @@ const propOverrides = {
 
 const MC_SERVER_JAR_DIR = path.join(__dirname, '../', 'server_jars')
 const MC_SERVER_JAR = path.join(MC_SERVER_JAR_DIR, `minecraft_server.${minecraftVersion}.jar`)
-const MC_SERVER_PATH = path.join(__dirname, '../', 'village')
+const MC_SERVER_PATH = path.join(__dirname, '../', `village/${name}`)
 
 fs.ensureDirSync(MC_SERVER_JAR_DIR)
 fs.ensureDirSync(MC_SERVER_PATH)
