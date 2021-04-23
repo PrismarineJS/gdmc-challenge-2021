@@ -7,3 +7,7 @@ versions/
 *.png
 *.gif
 data/
+logs
+launcher_accounts.json
+village
+world_download
